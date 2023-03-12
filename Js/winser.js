@@ -1,7 +1,8 @@
-import { nav, card } from "./components.js";
+import { nav, card, button } from "./components.js";
 import { head, body, skillsContainer } from "./selectors.js";
 import { linkT, linkT2, newDiv, cardCont } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
+import { projects as pro, press, contact } from "./urls.js";
 
 //Adds bootstrap css
 linkT2.setAttribute("href", "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css");
@@ -15,7 +16,7 @@ linkT.setAttribute("rel", "stylesheet");
 linkT.setAttribute("href", "../Styles/winser.css");
 head.append(linkT);
 
-//Creates Navbar container
+//Adds styles to Navbar container
 newDiv.setAttribute("class", "navDiv");
 
 //Adds navbar as the 1st child of the body tag
@@ -30,17 +31,15 @@ for (let i = 0; i < skills.length; i++) {
     console.log(i);
 }
 
-skillsContainer.setAttribute("class", "navDiv");
- 
+skillsContainer.setAttribute("class", "container");
+cardCont.setAttribute("class", "row");
 
+//Buttons
 
+let projectsHome = document.querySelector(".projects");
+let projectsPress = document.querySelector(".press");
+let projectsContact = document.querySelector(".contact");
 
-
-
-
-
-
-
-
-
-
+projectsHome.innerHTML += button("Projects", pro);
+projectsPress.innerHTML += button("Publications", press);
+projectsContact.innerHTML += button("Contact", contact);

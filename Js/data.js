@@ -4,20 +4,20 @@ let projects = [];
 let skills = [
     {
         "skill": "JavaScript",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+        "img": "../Assets/javascript.png",
         "alt": "JavaScript logo",
         "learnMore": "https://www.javascript.com/"
     },
     {
-        "skill": "JavaScript",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-        "alt": "JavaScript logo",
+        "skill": "Bootstrap",
+        "img": "../Assets/bootstrap.png",
+        "alt": "Bootstrap logo",
         "learnMore": "https://www.javascript.com/"
     },
     {
-        "skill": "JavaScript",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-        "alt": "JavaScript logo",
+        "skill": "React",
+        "img": "../Assets/react.png",
+        "alt": "React logo",
         "learnMore": "https://www.javascript.com/"
     },
 ];

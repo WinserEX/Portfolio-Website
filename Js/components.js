@@ -31,14 +31,26 @@ export let nav =
 export let card = (img, alt, learnMore, skill) => { 
 let res =
 `
-<div class="card" style="width: 18rem;">
+<div class="card col-sm-12 col-md-3 m-4" style="width: 18rem;">
   <img src="${img}" class="card-img-top" alt="${alt}">
   <div class="card-body">
     <h5 class="card-title">${skill}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="${learnMore}" class="btn btn-primary">Go somewhere</a>
+    <a href="${learnMore}" class="btn btn-primary">Learn more</a>
   </div>
 </div>
 `
 return res;
 }
+
+export let button = (text, link) => {
+    let res = 
+    `
+    <div class="container d-flex justify-content-center">
+        <div class="row d-flex justify-content-center">
+            <a href="${link}" class="btn btn-primary">${text}</a>
+        </div>
+    </div>
+    `
+    return res;
+}
+
