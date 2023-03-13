@@ -1,4 +1,4 @@
-export { linkT, linkT2, newDiv, cardCont };
+export { linkT, linkT2, newDiv, cardCont, cardCont2 };
 
 //Creates <link> elements
 let linkT = document.createElement("link");
@@ -9,3 +9,6 @@ let newDiv = document.createElement("div");
 
 //Creates <div> element that will contain the skills cards
 let cardCont = document.createElement("div");
+
+//Creates <div> element that will contain the projects cards
+let cardCont2 = document.createElement("div");

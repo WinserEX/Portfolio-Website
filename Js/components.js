@@ -28,13 +28,13 @@ export let nav =
         </div>
     </nav>
 `
-export let card = (img, alt, learnMore, skill) => { 
+export let card = (img, alt, learnMore, name) => { 
 let res =
 `
-<div class="card col-sm-12 col-md-3 m-4" style="width: 18rem;">
+<div class="card m-4" style="width: 15rem;">
   <img src="${img}" class="card-img-top" alt="${alt}">
   <div class="card-body">
-    <h5 class="card-title">${skill}</h5>
+    <h5 class="card-title">${name}</h5>
     <a href="${learnMore}" class="btn btn-primary">Learn more</a>
   </div>
 </div>

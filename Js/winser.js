@@ -1,6 +1,6 @@
 import { nav, card, button } from "./components.js";
-import { head, body, skillsContainer } from "./selectors.js";
-import { linkT, linkT2, newDiv, cardCont } from "./elements.js";
+import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards } from "./selectors.js";
+import { linkT, linkT2, newDiv, cardCont, cardCont2 } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
 import { projects as pro, press, contact } from "./urls.js";
 
@@ -31,15 +31,21 @@ for (let i = 0; i < skills.length; i++) {
     console.log(i);
 }
 
+//Sets the class of the skills container
 skillsContainer.setAttribute("class", "container");
 cardCont.setAttribute("class", "row");
 
 //Buttons
-
-let projectsHome = document.querySelector(".projects");
-let projectsPress = document.querySelector(".press");
-let projectsContact = document.querySelector(".contact");
-
-projectsHome.innerHTML += button("Projects", pro);
 projectsPress.innerHTML += button("Publications", press);
 projectsContact.innerHTML += button("Contact", contact);
+
+//Adds projects to the projects container
+for (let i = 0; i < projects.length; i++) {
+    cardCont2.innerHTML += card(projects[i].img, projects[i].alt, projects[i].learnMore, projects[i].project)
+    projectCards.append(cardCont2);
+    console.log(i);
+}
+
+//Sets the class of the projects container
+projectCards.setAttribute("class", "container");
+cardCont2.setAttribute("class", "row");
