@@ -1,4 +1,4 @@
-export { linkT, linkT2, newDiv, cardCont, cardCont2 };
+export { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, fontAwesome };
 
 //Creates <link> elements
 let linkT = document.createElement("link");
@@ -12,3 +12,12 @@ let cardCont = document.createElement("div");
 
 //Creates <div> element that will contain the projects cards
 let cardCont2 = document.createElement("div");
+
+//Creates <div> element that will contain the publications cards
+let cardCont3 = document.createElement("div");
+
+//Creates fontawesome link
+let fontAwesome = 
+`
+<script src="https://kit.fontawesome.com/f1aca0f249.js" crossorigin="anonymous"></script>
+`

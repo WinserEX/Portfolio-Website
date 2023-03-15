@@ -1,6 +1,6 @@
-import { nav, card, button } from "./components.js";
-import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards } from "./selectors.js";
-import { linkT, linkT2, newDiv, cardCont, cardCont2 } from "./elements.js";
+import { nav, card, button, footer } from "./components.js";
+import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards, pressContainer } from "./selectors.js";
+import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, fontAwesome } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
 import { projects as pro, press, contact } from "./urls.js";
 
@@ -16,6 +16,9 @@ linkT.setAttribute("rel", "stylesheet");
 linkT.setAttribute("href", "../Styles/winser.css");
 head.append(linkT);
 
+//Adds Font Awesome
+head.innerHTML += fontAwesome;
+
 //Adds styles to Navbar container
 newDiv.setAttribute("class", "navDiv");
 
@@ -23,29 +26,65 @@ newDiv.setAttribute("class", "navDiv");
 newDiv.innerHTML = nav;
 body.insertBefore(newDiv, body.firstChild);
 
-//Adds skills to the skills container
-for (let i = 0; i < skills.length; i++) {
+//Requires further development, needs show more logic 
+let fourCards = 4
+let allCardsSkills = skills.length
 
-    cardCont.innerHTML += card(skills[i].img, skills[i].alt, skills[i].learnMore, skills[i].skill)
-    skillsContainer.append(cardCont);
-    console.log(i);
+//Adds skills to the skills container
+let displaySkills = (cardAmt, container, div) => {
+    for (let i = 0; i < cardAmt; i++) {
+
+        cardCont.innerHTML += card(skills[i].img, skills[i].alt, skills[i].learnMore, skills[i].skill)
+        container.append(div);
+        console.log(i);
+    }
 }
+
+displaySkills(allCardsSkills, skillsContainer, cardCont);
 
 //Sets the class of the skills container
 skillsContainer.setAttribute("class", "container");
 cardCont.setAttribute("class", "row");
 
 //Buttons
-projectsPress.innerHTML += button("Publications", press);
+//projectsPress.innerHTML += button("Publications", press);
 projectsContact.innerHTML += button("Contact", contact);
 
+//Count of cards
+let allCardsProjects = projects.length
+
 //Adds projects to the projects container
-for (let i = 0; i < projects.length; i++) {
-    cardCont2.innerHTML += card(projects[i].img, projects[i].alt, projects[i].learnMore, projects[i].project)
-    projectCards.append(cardCont2);
-    console.log(i);
+let displayProjects = (cardAmt, container, div) => {
+    for (let i = 0; i < cardAmt; i++) {
+        
+        cardCont2.innerHTML += card(projects[i].img, projects[i].alt, projects[i].learnMore, projects[i].project)
+        container.append(div);
+        console.log(i);
+    }
 }
+
+displayProjects(allCardsProjects, projectCards, cardCont2);
 
 //Sets the class of the projects container
 projectCards.setAttribute("class", "container");
 cardCont2.setAttribute("class", "row");
+
+//Count of cards
+let allCardsPress = publications.length
+
+//Adds publications to the press container
+let displayPress = (cardAmt, container, div) => {
+    for (let i = 0; i < cardAmt; i++) {
+        
+        cardCont3.innerHTML += card(publications[i].img, publications[i].alt, publications[i].Read, publications[i].publication)
+        container.append(div);
+        console.log(i);
+    }
+}
+
+displayPress(allCardsPress, pressContainer, cardCont3);
+
+//Sets the class of the projects container
+pressContainer.setAttribute("class", "container");
+cardCont3.setAttribute("class", "row");
+

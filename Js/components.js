@@ -54,3 +54,6 @@ export let button = (text, link) => {
     return res;
 }
 
+export let footer = () => {
+    return `<p>Hello</p>`;
+}

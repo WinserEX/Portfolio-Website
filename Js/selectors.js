@@ -1,4 +1,4 @@
-export { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards };
+export { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards, pressContainer };
 
 //Head tag
 let head = document.querySelector("head");
@@ -14,3 +14,6 @@ let projectsContact = document.querySelector(".contact");
 
 //Projects container
 let projectCards = document.querySelector(".projectCards");
+
+//Publications container
+let pressContainer = document.querySelector(".publications");
