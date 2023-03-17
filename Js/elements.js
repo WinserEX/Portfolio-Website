@@ -1,4 +1,4 @@
-export { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, bsIcons };
+export { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, bsIcons, fDiv, cardCont4 };
 
 //Creates <link> elements
 let linkT = document.createElement("link");
@@ -22,4 +22,9 @@ let bsIcons =
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 `
 
+//Creates <div> element that will contain footer
+let fDiv = document.createElement("div");
+
+//Creates <div> element that will contain projects at projects index
+let cardCont4 = document.createElement("div");
 

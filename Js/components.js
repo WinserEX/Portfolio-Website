@@ -1,5 +1,5 @@
 //Components
-import { about, projects, press, contact, home } from './urls.js';
+import { about, projects, press, contact, home, gitHub, linkedIn, dribble, whatsApp, mailWinser } from './urls.js';
 export let nav = 
 `
 <nav class="navbar navbar-expand-lg bg-light">
@@ -54,22 +54,26 @@ export let button = (text, link) => {
     return res;
 }
 
+//gitHub, linkedIn, whatsApp, mailWinser
+
 export let footer = () => {
-    let res = 
-    `
+   let res = `
     <p class="text-center mb-0">Find me or contact me on:</p>
     <ul class="nav justify-content-center pt-3 pb-3 mt-0">
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-github"></i></a>
+          <a class="nav-link" href="${gitHub}"><i class="bi bi-github"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-linkedin"></i></a>
+          <a class="nav-link" href="${linkedIn}"><i class="bi bi-linkedin"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-whatsapp"></i></a>
+          <a class="nav-link" href="${dribble}"><i class="bi bi-dribbble"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><i class="bi bi-envelope"></i></a>
+          <a class="nav-link" href="${whatsApp}"><i class="bi bi-whatsapp"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="${mailWinser}"><i class="bi bi-envelope"></i></a>
         </li>
     </ul>
     `

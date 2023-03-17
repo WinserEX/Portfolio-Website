@@ -1,6 +1,6 @@
 import { nav, card, button, footer } from "./components.js";
 import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards, pressContainer } from "./selectors.js";
-import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, bsIcons } from "./elements.js";
+import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, bsIcons, fDiv, cardCont4 } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
 import { projects as pro, press, contact } from "./urls.js";
 
@@ -10,6 +10,9 @@ linkT2.setAttribute("rel", "stylesheet");
 linkT2.setAttribute("integrity", "sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65");
 linkT2.setAttribute("crossorigin", "anonymous");
 head.append(linkT2);
+
+//Adds bootstrap icons
+head.innerHTML += bsIcons
 
 //Adds CSS
 linkT.setAttribute("rel", "stylesheet");
@@ -23,21 +26,30 @@ newDiv.setAttribute("class", "navDiv");
 newDiv.innerHTML = nav;
 body.insertBefore(newDiv, body.firstChild);
 
+//Adds footer the body tag
+fDiv.innerHTML = footer();
+body.append(fDiv);
+
 //Requires further development, needs show more logic 
-let fourCards = 4
 let allCardsSkills = skills.length
 
 //Adds skills to the skills container
-let displaySkills = (cardAmt, container, div) => {
+let displaySkills = (cardAmt, container, row) => {
     for (let i = 0; i < cardAmt; i++) {
 
-        cardCont.innerHTML += card(skills[i].img, skills[i].alt, skills[i].learnMore, skills[i].skill)
-        container.append(div);
-        console.log(i);
+        row.innerHTML += card(skills[i].img, skills[i].alt, skills[i].learnMore, skills[i].skill)
+        container.append(row);
+        //Sets the class of the skills container
+        container.setAttribute("class", "container");
+        row.setAttribute("class", "row");
     }
 }
 
+//Skills Home
 displaySkills(4, skillsContainer, cardCont);
+
+//Skills index
+
 
 //Sets the class of the skills container
 skillsContainer.setAttribute("class", "container");
@@ -45,51 +57,49 @@ cardCont.setAttribute("class", "row");
 
 //Buttons
 //projectsPress.innerHTML += button("Publications", press);
-projectsContact.innerHTML += button("Contact", contact);
+//projectsContact.innerHTML += button("Contact", contact);
 
 //Count of cards
 let allCardsProjects = projects.length
 
 //Adds projects to the projects container
-let displayProjects = (cardAmt, container, div) => {
+let displayProjects = (cardAmt, container, row) => {
     for (let i = 0; i < cardAmt; i++) {
         
-        cardCont2.innerHTML += card(projects[i].img, projects[i].alt, projects[i].learnMore, projects[i].project)
-        container.append(div);
-        console.log(i);
+        row.innerHTML += card(projects[i].img, projects[i].alt, projects[i].learnMore, projects[i].project)
+        container.append(row);
+        //Sets the class of the projects container
+        container.setAttribute("class", "container");
+        row.setAttribute("class", "row");
     }
 }
-
+//Projects Home
 displayProjects(allCardsProjects, projectCards, cardCont2);
 
-//Sets the class of the projects container
-projectCards.setAttribute("class", "container");
-cardCont2.setAttribute("class", "row");
+//Projects Index
+//let divIn = document.createElement("div")
+//displayProjects(allCardsProjects, projectCindex, divIn);
+
 
 //Count of cards
 let allCardsPress = publications.length
 
 //Adds publications to the press container
-let displayPress = (cardAmt, container, div) => {
+let displayPress = (cardAmt, container, row) => {
     for (let i = 0; i < cardAmt; i++) {
         
-        cardCont3.innerHTML += card(publications[i].img, publications[i].alt, publications[i].Read, publications[i].publication)
-        container.append(div);
-        console.log(i);
+        row.innerHTML += card(publications[i].img, publications[i].alt, publications[i].Read, publications[i].publication)
+        container.append(row);
+        //Sets the class of the press container
+        container.setAttribute("class", "container");
+        row.setAttribute("class", "row");
     }
 }
 
+//Press Home
 displayPress(allCardsPress, pressContainer, cardCont3);
 
-//Sets the class of the projects container
-pressContainer.setAttribute("class", "container");
-cardCont3.setAttribute("class", "row");
+//Press Index
 
-//Adds bootstrap icons
-head.innerHTML += bsIcons
 
-//Adds footer the body tag
-let fDiv = document.createElement("div");
-fDiv.innerHTML = footer();
-body.append(fDiv);
 
