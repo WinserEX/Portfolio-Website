@@ -37,7 +37,7 @@ let displaySkills = (cardAmt, container, div) => {
     }
 }
 
-displaySkills(allCardsSkills, skillsContainer, cardCont);
+displaySkills(4, skillsContainer, cardCont);
 
 //Sets the class of the skills container
 skillsContainer.setAttribute("class", "container");
@@ -87,4 +87,9 @@ cardCont3.setAttribute("class", "row");
 
 //Adds bootstrap icons
 head.innerHTML += bsIcons
+
+//Adds footer the body tag
+let fDiv = document.createElement("div");
+fDiv.innerHTML = footer();
+body.append(fDiv);
 
