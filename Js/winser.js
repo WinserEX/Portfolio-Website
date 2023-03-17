@@ -1,6 +1,6 @@
 import { nav, card, button, footer } from "./components.js";
 import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards, pressContainer } from "./selectors.js";
-import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, fontAwesome } from "./elements.js";
+import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3 } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
 import { projects as pro, press, contact } from "./urls.js";
 
@@ -15,9 +15,6 @@ head.append(linkT2);
 linkT.setAttribute("rel", "stylesheet");
 linkT.setAttribute("href", "../Styles/winser.css");
 head.append(linkT);
-
-//Adds Font Awesome
-head.innerHTML += fontAwesome;
 
 //Adds styles to Navbar container
 newDiv.setAttribute("class", "navDiv");
