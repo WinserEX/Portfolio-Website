@@ -1,6 +1,6 @@
 import { nav, card, button, footer } from "./components.js";
 import { head, body, skillsContainer, projectsHome, projectsPress, projectsContact, projectCards, pressContainer } from "./selectors.js";
-import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3 } from "./elements.js";
+import { linkT, linkT2, newDiv, cardCont, cardCont2, cardCont3, bsIcons } from "./elements.js";
 import { projects, skills, publications } from "./data.js";
 import { projects as pro, press, contact } from "./urls.js";
 
@@ -84,4 +84,7 @@ displayPress(allCardsPress, pressContainer, cardCont3);
 //Sets the class of the projects container
 pressContainer.setAttribute("class", "container");
 cardCont3.setAttribute("class", "row");
+
+//Adds bootstrap icons
+head.innerHTML += bsIcons
 
