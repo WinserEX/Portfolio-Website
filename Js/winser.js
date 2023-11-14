@@ -16,7 +16,7 @@ head.innerHTML += bsIcons
 
 //Adds CSS
 linkT.setAttribute("rel", "stylesheet");
-linkT.setAttribute("href", "../Styles/winser.css");
+linkT.setAttribute("href", "Styles/winser.css");
 head.append(linkT);
 
 //Adds styles to Navbar container
